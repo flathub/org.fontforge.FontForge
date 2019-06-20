@@ -43,6 +43,8 @@ modules:
   - name: fontforge
     post-install:
         - cp -a org.fontforge.FontForge.appdata.xml /app/share/appdata/org.fontforge.FontForge.appdata.xml
+        - cp -a /app/share/mime/packages/fontforge.xml /app/share/mime/packages/org.fontforge.FontForge.xml
+
     sources:
         - type: archive
           url: https://github.com/fontforge/fontforge/releases/download/20190413/fontforge-20190413.tar.gz
