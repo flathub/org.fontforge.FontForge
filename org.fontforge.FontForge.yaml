@@ -41,6 +41,8 @@ modules:
           sha256: 8aed97d0bc872d893d8bf642a14e49958b0613136e1bfe2a415c69599c803c90
 
   - name: fontforge
+    cleanup:
+         - /share/doc/fontforge
     post-install:
         - cp -a org.fontforge.FontForge.appdata.xml /app/share/appdata/org.fontforge.FontForge.appdata.xml
         - cp -a /app/share/mime/packages/fontforge.xml /app/share/mime/packages/org.fontforge.FontForge.xml
