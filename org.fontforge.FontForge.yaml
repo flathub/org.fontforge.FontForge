@@ -44,7 +44,7 @@ modules:
     cleanup:
          - /share/doc/fontforge
     post-install:
-        - cp -a org.fontforge.FontForge.appdata.xml /app/share/appdata/org.fontforge.FontForge.appdata.xml
+        - cp -a org.fontforge.FontForge.appdata.xml /app/share/metainfo/org.fontforge.FontForge.appdata.xml
         - cp -a /app/share/mime/packages/fontforge.xml /app/share/mime/packages/org.fontforge.FontForge.xml
 
     sources:
