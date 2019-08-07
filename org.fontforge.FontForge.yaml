@@ -45,11 +45,18 @@ modules:
          - /share/doc/fontforge
     post-install:
         - cp -a org.fontforge.FontForge.appdata.xml /app/share/appdata/org.fontforge.FontForge.appdata.xml
+        - cp -a org.fontforge.FontForge.metainfo.xml /app/share/metainfo/org.fontforge.FontForge.metainfo.xml
         - cp -a /app/share/mime/packages/fontforge.xml /app/share/mime/packages/org.fontforge.FontForge.xml
 
     sources:
         - type: archive
-          url: https://github.com/fontforge/fontforge/releases/download/20190413/fontforge-20190413.tar.gz
-          sha256: 6762a045aba3d6ff1a7b856ae2e1e900a08a8925ccac5ebf24de91692b206617
+          url: https://github.com/fontforge/fontforge/releases/download/20190801/fontforge-20190801.tar.gz
+          sha256: d92075ca783c97dc68433b1ed629b9054a4b4c74ac64c54ced7f691540f70852
+        - type: file
+          # We take this file, because the released version does not validate.
+          # We wait for this file to be included in a release.
+          # https://github.com/fontforge/fontforge/pull/3858
+          url: https://raw.githubusercontent.com/fontforge/fontforge/master/desktop/org.fontforge.FontForge.metainfo.xml
+          sha256: dd5178b9737681a6eb7a2d7824ad993744ac5f1135617e4af6f7f50fcfd1fb86
         - type: file
           path: org.fontforge.FontForge.appdata.xml

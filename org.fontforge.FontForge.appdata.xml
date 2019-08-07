@@ -28,7 +28,24 @@
   <update_contact>fontforge-devel@lists.sourceforge.net</update_contact>
   <content_rating type="oars-1.1"/>
   <releases>
-    <release date="2019-04-13" version="20190413"/>
+    <release version="20190801" date="2019-08-01T09:51:15Z">Along with the usual bugfixes, there have been a couple of new features worth calling out:
+
+* Added Croatian translation
+* Added user decompositions
+* New graphic for the splash/about screen
+* Images embedded in SFDs are now serialised as PNGs
+  - This is enabled by default, but may be turned off with the 'WritePNGInSFD' option.
+  - A new tag is used to identify this mode; 'Image2', instead of 'Image'
+  - This requires FontForge to be compiled with libpng support. If not compiled with libpng, FontForge will revert to the old method of serialising RLE encoded raw images.
+
+As part of an ongoing effort to clean up the code base, there have additionally been multiple build system changes:
+
+* Python 2 support is deprecated. It is **strongly** recommended to build with Python 3 support. Python 2 support will be removed in a future release.
+* Both the Windows and Mac builds are now built with Python 3 instead of Python 2.
+* The minimum supported version for the Mac build is now MacOS Sierra (10.12)
+* FontForge no longer uses gnulib
+* collab support has been removed
+* The build system now expects libuninameslist to be present, and will fail if it is not found. Building without libuninameslist must be explcititly specified using `--without-libuninameslist`</release><release date="2019-04-13" version="20190413"/>
     <release date="2019-03-17" version="20190317"/>
     <release date="2017-07-31" version="20170731"/>
     <release date="2016-10-05" version="20161005"/>
