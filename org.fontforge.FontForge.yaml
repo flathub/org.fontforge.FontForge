@@ -44,8 +44,9 @@ modules:
     cleanup:
          - /share/doc/fontforge
     post-install:
-        - cp -a org.fontforge.FontForge.appdata.xml /app/share/appdata/org.fontforge.FontForge.appdata.xml
         - cp -a org.fontforge.FontForge.metainfo.xml /app/share/metainfo/org.fontforge.FontForge.metainfo.xml
+        - cp -a org.fontforge.FontForge.metainfo.xml /app/share/metainfo/org.fontforge.FontForge.appdata.xml
+        - cp -a org.fontforge.FontForge.metainfo.xml /app/share/appdata/org.fontforge.FontForge.appdata.xml
         - cp -a /app/share/mime/packages/fontforge.xml /app/share/mime/packages/org.fontforge.FontForge.xml
 
     sources:
@@ -56,7 +57,6 @@ modules:
           # We take this file, because the released version does not validate.
           # We wait for this file to be included in a release.
           # https://github.com/fontforge/fontforge/pull/3858
-          url: https://raw.githubusercontent.com/fontforge/fontforge/master/desktop/org.fontforge.FontForge.metainfo.xml
-          sha256: dd5178b9737681a6eb7a2d7824ad993744ac5f1135617e4af6f7f50fcfd1fb86
-        - type: file
-          path: org.fontforge.FontForge.appdata.xml
+          url: https://raw.githubusercontent.com/fontforge/fontforge/d8f1c2ad04de86491a675efb1bf1371cd2727bfa/desktop/org.fontforge.FontForge.appdata.xml.in
+          dest-filename: org.fontforge.FontForge.metainfo.xml
+          sha256: ee861f9237391291fa3e376c61b928de32173785c65659d6180091b24dc4cd23
