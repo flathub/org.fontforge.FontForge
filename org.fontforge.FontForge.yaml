@@ -41,22 +41,14 @@ modules:
           sha256: 8aed97d0bc872d893d8bf642a14e49958b0613136e1bfe2a415c69599c803c90
 
   - name: fontforge
+    buildsystem: cmake-ninja
+    builddir: true
     cleanup:
          - /share/doc/fontforge
     post-install:
-        - cp -a org.fontforge.FontForge.metainfo.xml /app/share/metainfo/org.fontforge.FontForge.metainfo.xml
-        - cp -a org.fontforge.FontForge.metainfo.xml /app/share/metainfo/org.fontforge.FontForge.appdata.xml
-        - cp -a org.fontforge.FontForge.metainfo.xml /app/share/appdata/org.fontforge.FontForge.appdata.xml
-        - cp -a /app/share/mime/packages/fontforge.xml /app/share/mime/packages/org.fontforge.FontForge.xml
+        - cp -a --reflink=auto  /app/share/mime/packages/fontforge.xml /app/share/mime/packages/org.fontforge.FontForge.xml
 
     sources:
         - type: archive
-          url: https://github.com/fontforge/fontforge/releases/download/20190801/fontforge-20190801.tar.gz
-          sha256: d92075ca783c97dc68433b1ed629b9054a4b4c74ac64c54ced7f691540f70852
-        - type: file
-          # We take this file, because the released version does not validate.
-          # We wait for this file to be included in a release.
-          # https://github.com/fontforge/fontforge/pull/3858
-          url: https://raw.githubusercontent.com/fontforge/fontforge/d8f1c2ad04de86491a675efb1bf1371cd2727bfa/desktop/org.fontforge.FontForge.appdata.xml.in
-          dest-filename: org.fontforge.FontForge.metainfo.xml
-          sha256: ee861f9237391291fa3e376c61b928de32173785c65659d6180091b24dc4cd23
+          url: https://github.com/fontforge/fontforge/releases/download/20200314/fontforge-20200314.tar.xz
+          sha256: cd190b237353dc3f48ddca7b0b3439da8ec4fcf27911d14cc1ccc76c1a47c861
