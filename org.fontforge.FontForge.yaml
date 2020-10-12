@@ -40,6 +40,14 @@ modules:
           url: https://github.com/fontforge/libuninameslist/releases/download/20180701/libuninameslist-dist-20180701.tar.gz
           sha256: 8aed97d0bc872d893d8bf642a14e49958b0613136e1bfe2a415c69599c803c90
 
+  - name: woff2
+    buildsystem: cmake-ninja
+    builddir: true
+    sources:
+        - type: archive
+          url: https://github.com/google/woff2/archive/v1.0.2.tar.gz
+          sha256: add272bb09e6384a4833ffca4896350fdb16e0ca22df68c0384773c67a175594
+
   - name: fontforge
     buildsystem: cmake-ninja
     builddir: true
