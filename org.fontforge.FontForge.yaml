@@ -36,6 +36,10 @@ modules:
         - type: archive
           url: https://github.com/fontforge/libspiro/releases/download/0.5.20150702/libspiro-dist-0.5.20150702.tar.gz
           sha256: 514d215942b860c8ee77282b14e11129ecea1992f8dfcb9ea69c0f68249f6c94
+          x-checker-data:
+            type: anitya
+            project-id: 1725
+            url-template: https://github.com/fontforge/libspiro/releases/download/$version/libspiro-dist-$version.tar.gz
 
 
   - name: libuinameslist
