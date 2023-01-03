@@ -1,7 +1,7 @@
 app-id: org.fontforge.FontForge
 
 runtime: org.freedesktop.Platform
-runtime-version: "22.08"
+runtime-version: '22.08'
 sdk: org.freedesktop.Sdk
 
 command: fontforge
@@ -13,10 +13,10 @@ finish-args:
   - --filesystem=host
 
 cleanup:
-    - "*.a"
-    - "*.la"
-    - "*.h"
-    - "*.pc"
+  - '*.a'
+  - '*.la'
+  - '*.h'
+  - '*.pc'
 
 modules:
   - shared-modules/python2.7/python-2.7.15.json
@@ -30,54 +30,57 @@ modules:
             type: gnome
             name: pango
             stable-only: True
+            versions:
+                "<": "1.90"
 
   - name: libspiro
     sources:
-        - type: archive
-          url: https://github.com/fontforge/libspiro/releases/download/0.5.20150702/libspiro-dist-0.5.20150702.tar.gz
-          sha256: 514d215942b860c8ee77282b14e11129ecea1992f8dfcb9ea69c0f68249f6c94
-          x-checker-data:
-            type: anitya
-            project-id: 1725
-            url-template: https://github.com/fontforge/libspiro/releases/download/$version/libspiro-dist-$version.tar.gz
+      - type: archive
+        url: https://github.com/fontforge/libspiro/releases/download/20221101/libspiro-dist-20221101.tar.gz
+        sha256: 5984fb5af3e4e1f927f3a74850b705a711fb86284802a5e6170b09786440e8be
+        x-checker-data:
+          type: anitya
+          project-id: 1725
+          url-template: https://github.com/fontforge/libspiro/releases/download/$version/libspiro-dist-$version.tar.gz
 
 
   - name: libuinameslist
     sources:
-        - type: archive
-          url: https://github.com/fontforge/libuninameslist/releases/download/20180701/libuninameslist-dist-20180701.tar.gz
-          sha256: 8aed97d0bc872d893d8bf642a14e49958b0613136e1bfe2a415c69599c803c90
-          x-checker-data:
-            type: json
-            url: https://api.github.com/repos/fontforge/libuninameslist/releases/latest
-            version-query: ".tag_name"
-            url-query: ".assets[] | select(.name==\"libuninameslist-dist-\" + $version + \".tar.gz\") | .browser_download_url"
+      - type: archive
+        url: https://github.com/fontforge/libuninameslist/releases/download/20221022/libuninameslist-dist-20221022.tar.gz
+        sha256: 92c833936d653b2f205fb5e7ac82818311824dabdc7abdc2e81f07c3a0ea39bb
+        x-checker-data:
+          type: json
+          url: https://api.github.com/repos/fontforge/libuninameslist/releases/latest
+          version-query: .tag_name
+          url-query: .assets[] | select(.name=="libuninameslist-dist-" + $version
+            + ".tar.gz") | .browser_download_url
 
   - name: woff2
     buildsystem: cmake-ninja
     builddir: true
     sources:
-        - type: archive
-          url: https://github.com/google/woff2/archive/v1.0.2.tar.gz
-          sha256: add272bb09e6384a4833ffca4896350fdb16e0ca22df68c0384773c67a175594
-          x-checker-data:
-            type: anitya
-            project-id: 17587
-            url-template: "https://github.com/google/woff2/archive/v$version.tar.gz"
+      - type: archive
+        url: https://github.com/google/woff2/archive/v1.0.2.tar.gz
+        sha256: add272bb09e6384a4833ffca4896350fdb16e0ca22df68c0384773c67a175594
+        x-checker-data:
+          type: anitya
+          project-id: 17587
+          url-template: https://github.com/google/woff2/archive/v$version.tar.gz
 
   - name: fontforge
     buildsystem: cmake-ninja
     builddir: true
     cleanup:
-         - /share/doc/fontforge
+      - /share/doc/fontforge
     post-install:
-        - cp -a --reflink=auto  /app/share/mime/packages/fontforge.xml /app/share/mime/packages/org.fontforge.FontForge.xml
+      - cp -a --reflink=auto  /app/share/mime/packages/fontforge.xml /app/share/mime/packages/org.fontforge.FontForge.xml
 
     sources:
-        - type: archive
-          url: https://github.com/fontforge/fontforge/releases/download/20220308/fontforge-20220308.tar.xz
-          sha256: 01e4017f7a0ccecf436c74b8e1f6b374fc04a5283c1d68967996782e15618e59
-          x-checker-data:
-            type: anitya
-            project-id: 5807
-            url-template: https://github.com/fontforge/fontforge/releases/download/$version/fontforge-$version.tar.xz
+      - type: archive
+        url: https://github.com/fontforge/fontforge/releases/download/20230101/fontforge-20230101.tar.xz
+        sha256: ca82ec4c060c4dda70ace5478a41b5e7b95eb035fe1c4cf85c48f996d35c60f8
+        x-checker-data:
+          type: anitya
+          project-id: 5807
+          url-template: https://github.com/fontforge/fontforge/releases/download/$version/fontforge-$version.tar.xz
