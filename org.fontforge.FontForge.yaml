@@ -22,6 +22,7 @@ modules:
   - shared-modules/python2.7/python-2.7.15.json
   # We need pangoxft and it's not in the runtime
   - name: pango
+    buildsystem: meson
     sources:
       - type: archive
         url: https://download.gnome.org/sources/pango/1.50/pango-1.50.12.tar.xz
