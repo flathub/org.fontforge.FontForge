@@ -69,6 +69,15 @@ modules:
           project-id: 17587
           url-template: https://github.com/google/woff2/archive/v$version.tar.gz
 
+  - name: potrace
+    config-opts:
+      - --with-libpotrace
+      - --disable-static
+    sources:
+      - type: archive
+        url: https://downloads.sourceforge.net/project/potrace/1.16/potrace-1.16.tar.gz
+        sha256: be8248a17dedd6ccbaab2fcc45835bb0502d062e40fbded3bc56028ce5eb7acc
+
   - name: fontforge
     buildsystem: cmake-ninja
     builddir: true
