@@ -1,9 +1,9 @@
 app-id: org.fontforge.FontForge
 
 runtime: org.freedesktop.Platform
-runtime-version: '22.08'
+runtime-version: '23.08'
 sdk: org.freedesktop.Sdk
-
+rename-mime-file: fontforge.xml
 command: fontforge
 
 finish-args:
@@ -15,8 +15,12 @@ finish-args:
 cleanup:
   - '*.a'
   - '*.la'
-  - '*.h'
-  - '*.pc'
+  - '/include'
+  - '/share/doc'
+  - '/share/man'
+  - '/share/gir-1.0'
+  - '/lib/pkgconfig'
+  - '/lib/girepository-1.0'
 
 modules:
   # We need pangoxft and it's not in the runtime
@@ -82,8 +86,6 @@ modules:
     builddir: true
     cleanup:
       - /share/doc/fontforge
-    post-install:
-      - cp -a --reflink=auto  /app/share/mime/packages/fontforge.xml /app/share/mime/packages/org.fontforge.FontForge.xml
 
     sources:
       - type: archive
@@ -93,3 +95,5 @@ modules:
           type: anitya
           project-id: 5807
           url-template: https://github.com/fontforge/fontforge/releases/download/$version/fontforge-$version.tar.xz
+      - type: patch
+        path: fontforge-po.patch
