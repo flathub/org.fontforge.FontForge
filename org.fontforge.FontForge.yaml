@@ -28,8 +28,8 @@ modules:
     buildsystem: meson
     sources:
       - type: archive
-        url: https://download.gnome.org/sources/pango/1.54/pango-1.54.0.tar.xz
-        sha256: 8a9eed75021ee734d7fc0fdf3a65c3bba51dfefe4ae51a9b414a60c70b2d1ed8
+        url: https://download.gnome.org/sources/pango/1.56/pango-1.56.1.tar.xz
+        sha256: 426be66460c98b8378573e7f6b0b2ab450f6bb6d2ec7cecc33ae81178f246480
         x-checker-data:
           type: gnome
           name: pango
