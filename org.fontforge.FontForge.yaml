@@ -23,6 +23,7 @@ cleanup:
   - /lib/girepository-1.0
 
 modules:
+  - gtkmm-3.0.yaml
   # We need pangoxft and it's not in the runtime
   - name: pango
     buildsystem: meson
