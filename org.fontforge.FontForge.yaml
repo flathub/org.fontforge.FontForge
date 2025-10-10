@@ -1,7 +1,7 @@
 app-id: org.fontforge.FontForge
 
 runtime: org.freedesktop.Platform
-runtime-version: '24.08'
+runtime-version: '25.08'
 sdk: org.freedesktop.Sdk
 rename-mime-file: fontforge.xml
 command: fontforge
@@ -58,6 +58,10 @@ modules:
   - name: woff2
     buildsystem: cmake-ninja
     builddir: true
+    build-options:
+      cxxflags: -include cstdint
+    config-opts:
+      - -DCMAKE_POLICY_VERSION_MINIMUM=3.5
     sources:
       - type: archive
         url: https://github.com/google/woff2/archive/v1.0.2.tar.gz
