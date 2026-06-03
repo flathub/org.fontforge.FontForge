@@ -34,8 +34,8 @@ modules:
       - /lib/cairomm-1.0
     sources:
       - type: archive
-        url: https://www.cairographics.org/releases/cairomm-1.14.5.tar.xz
-        sha256: 70136203540c884e89ce1c9edfb6369b9953937f6cd596d97c78c9758a5d48db
+        url: https://www.cairographics.org/releases/cairomm-1.14.6.tar.xz
+        sha256: 7e0d5c7f29175d573a03ab5c45aef63f48dd91a5caf335a404cd763e4b7cea4a
         x-checker-data:
           type: anitya
           project-id: 369459
