@@ -24,7 +24,8 @@ modules:
         x-checker-data:
           type: anitya
           project-id: 311642
-          url-template: https://download.gnome.org/sources/libsigc++/$major.$minor/libsigc++-$version.tar.xz
+          url-template: 
+            https://download.gnome.org/sources/libsigc++/$major.$minor/libsigc++-$version.tar.xz
 
   - name: cairomm
     buildsystem: meson
@@ -50,8 +51,8 @@ modules:
       - -Dbuild-examples=false
     sources:
       - type: archive
-        url: https://download.gnome.org/sources/glibmm/2.66/glibmm-2.66.8.tar.xz
-        sha256: 64f11d3b95a24e2a8d4166ecff518730f79ecc27222ef41faf7c7e0340fc9329
+        url: https://download.gnome.org/sources/glibmm/2.66/glibmm-2.66.10.tar.xz
+        sha256: 2b61780203aed98e701d3ea57c8f353e7c8ada9706a79be782f6c5153dd035c0
         x-checker-data:
           type: anitya
           project-id: 369440

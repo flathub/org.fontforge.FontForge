@@ -35,19 +35,22 @@ modules:
   - name: libspiro
     sources:
       - type: archive
-        url: https://github.com/fontforge/libspiro/releases/download/20240903/libspiro-dist-20240903.tar.gz
+        url: 
+          https://github.com/fontforge/libspiro/releases/download/20240903/libspiro-dist-20240903.tar.gz
         sha256: 1412a21b943c6e1db834ee2d74145aad20b3f62b12152d475613b8241d9cde10
         x-checker-data:
           type: anitya
           project-id: 1725
-          url-template: https://github.com/fontforge/libspiro/releases/download/$version/libspiro-dist-$version.tar.gz
+          url-template: 
+            https://github.com/fontforge/libspiro/releases/download/$version/libspiro-dist-$version.tar.gz
 
 
   - name: libuinameslist
     sources:
       - type: archive
-        url: https://github.com/fontforge/libuninameslist/releases/download/20260107/libuninameslist-dist-20260107.tar.gz
-        sha256: aadfaf62a96f20914d8dd248e8f19325471ead0cf3133b2f8ae0624c2da3657b
+        url: 
+          https://github.com/fontforge/libuninameslist/releases/download/20260918/libuninameslist-dist-20260918.tar.gz
+        sha256: deb2ec02640c232a4bc333c2cd301ee6b286914eeeb0ccc31ccafe326aed0029
         x-checker-data:
           type: json
           url: https://api.github.com/repos/fontforge/libuninameslist/releases/latest
@@ -88,9 +91,11 @@ modules:
 
     sources:
       - type: archive
-        url: https://github.com/fontforge/fontforge/releases/download/20251009/fontforge-20251009.tar.xz
+        url: 
+          https://github.com/fontforge/fontforge/releases/download/20251009/fontforge-20251009.tar.xz
         sha256: 69046500185a5581b58139dfad30c0b3d8128f00ebbfddc31f2fcf877e329e52
         x-checker-data:
           type: anitya
           project-id: 5807
-          url-template: https://github.com/fontforge/fontforge/releases/download/$version/fontforge-$version.tar.xz
+          url-template: 
+            https://github.com/fontforge/fontforge/releases/download/$version/fontforge-$version.tar.xz
