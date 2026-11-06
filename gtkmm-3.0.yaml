@@ -24,7 +24,7 @@ modules:
         x-checker-data:
           type: anitya
           project-id: 311642
-          url-template: https://download.gnome.org/sources/libsigc++/$major.$minor/libsigc++-$version.tar.xz
+          url-template: https://github.com/libsigcplusplus/libsigcplusplus/releases/download/$version/libsigc%2B%2B-$version.tar.xz
 
   - name: cairomm
     buildsystem: meson
